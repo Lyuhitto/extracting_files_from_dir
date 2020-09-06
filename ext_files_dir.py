@@ -17,16 +17,34 @@ class MyApp(QMainWindow):
         self.center()
         self.show()
 
+        # set actions
         # set exit action
         exitAction = QAction(QIcon('img/exit.png'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q')
         exitAction.setStatusTip('Exit application')
         exitAction.triggered.connect(qApp.quit)
 
+        # set extracting action
+        """todo"""
+
+        # set change language action
+        """todo"""
+
+        # set open help message action
+        """todo"""
+
         self.statusBar()
 
+        # set tool bar icon
+        # set exit icon
         self.toolbar = self.addToolBar('Exit')
         self.toolbar.addAction(exitAction)
+
+        # set change language icon
+        """todo"""
+
+        # set open help message icon
+        """todo"""
 
     # widget display in the middle of the screen
     def center(self):

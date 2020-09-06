@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtGui import QIcon
 
 
 class MyApp(QWidget):
@@ -10,6 +11,7 @@ class MyApp(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Extracting Files from Dir')
+        self.setWindowIcon(QIcon('img/web.png'))
         self.setGeometry(300, 300, 300, 200)
         self.show()
 

@@ -10,8 +10,7 @@ class MyApp(QWidget):
 
     def initUI(self):
         self.setWindowTitle('Extracting Files from Dir')
-        self.move(300, 300)
-        self.resize(400, 200)
+        self.setGeometry(300, 300, 300, 200)
         self.show()
 
 

@@ -65,6 +65,12 @@ class MyApp(QMainWindow):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
+    def toggleMenu(self, state):
+        if state:
+            self.statusBar.show()
+        else:
+            self.statusbar.hide()
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

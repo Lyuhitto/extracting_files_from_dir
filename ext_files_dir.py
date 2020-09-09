@@ -35,7 +35,7 @@ class MyApp(QMainWindow):
         viewStatAction = QAction('View statusbar', self, checkable=True)
         viewStatAction.setStatusTip('View statusbar')
         viewStatAction.setChecked(True)
-        viewStatAction.triggered.connect(self.toggleMenu)
+        viewStatAction.triggered.connect(self.toggleStat)
 
         # set toggleToolBar action
         '''todo'''
@@ -60,7 +60,7 @@ class MyApp(QMainWindow):
         fileMenu.addAction(exitAction)
         viewMenu = menubar.addMenu('&View')
         viewMenu.addAction(viewStatAction)
-        viewMenu.addAction(toggleToolBar)
+        #viewMenu.addAction(toggleToolBar)
 
     # widget display in the middle of the screen
     def center(self):
@@ -69,7 +69,7 @@ class MyApp(QMainWindow):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
-    def toggleMenu(self, state):
+    def toggleStat(self, state):
         if state:
             self.statusBar.show()
         else:

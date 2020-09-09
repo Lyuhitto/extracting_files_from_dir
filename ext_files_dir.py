@@ -48,6 +48,9 @@ class MyApp(QMainWindow):
         menubar = self.menuBar()
         fileMenu = menubar.addMenu('&File')
         fileMenu.addAction(exitAction)
+        viewMenu = menubar.addMenu('&View')
+        viewMenu.addAction(toggleStatBar)
+        viewMenu.addAction(toggleToolBar)
 
     # widget display in the middle of the screen
     def center(self):

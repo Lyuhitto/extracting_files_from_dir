@@ -15,6 +15,8 @@ class MyApp(QMainWindow):
         self.setWindowIcon(QIcon('img/web.png'))
         self.resize(500, 350)
         self.center()
+        self.statusBar = self.statusBar()
+        self.statusBar.showMessage('Hello')
 
         # set actions
         # set exit action
@@ -30,7 +32,10 @@ class MyApp(QMainWindow):
         """todo"""
 
         # set toggleStatBar action
-        '''todo'''
+        toggleStatBar = QAction('View statusbar', self, checkable=True)
+        toggleStatBar.setStatusTip('View statusbar')
+        toggleStatBar.setChecked(True)
+        toggleStatBar.triggered.connect(self.toggleMenu)
 
         # set toggleToolBar action
         '''todo'''
@@ -42,7 +47,6 @@ class MyApp(QMainWindow):
         # set exit icon
         self.toolbar = self.addToolBar('Exit')
         self.toolbar.addAction(exitAction)
-        self.statusBar()
 
         # set change language icon
         """todo"""
@@ -69,7 +73,7 @@ class MyApp(QMainWindow):
         if state:
             self.statusBar.show()
         else:
-            self.statusbar.hide()
+            self.statusBar.hide()
 
 
 if __name__ == '__main__':

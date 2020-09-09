@@ -32,10 +32,10 @@ class MyApp(QMainWindow):
         """todo"""
 
         # set toggleStatBar action
-        toggleStatBar = QAction('View statusbar', self, checkable=True)
-        toggleStatBar.setStatusTip('View statusbar')
-        toggleStatBar.setChecked(True)
-        toggleStatBar.triggered.connect(self.toggleMenu)
+        viewStatAction = QAction('View statusbar', self, checkable=True)
+        viewStatAction.setStatusTip('View statusbar')
+        viewStatAction.setChecked(True)
+        viewStatAction.triggered.connect(self.toggleMenu)
 
         # set toggleToolBar action
         '''todo'''
@@ -59,7 +59,7 @@ class MyApp(QMainWindow):
         fileMenu = menubar.addMenu('&File')
         fileMenu.addAction(exitAction)
         viewMenu = menubar.addMenu('&View')
-        viewMenu.addAction(toggleStatBar)
+        viewMenu.addAction(viewStatAction)
         viewMenu.addAction(toggleToolBar)
 
     # widget display in the middle of the screen

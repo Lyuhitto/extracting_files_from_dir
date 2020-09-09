@@ -29,11 +29,11 @@ class MyApp(QMainWindow):
         # set open help message action
         """todo"""
 
-        # set change language icon
-        """todo"""
+        # set toggleStatBar action
+        '''todo'''
 
-        # set open help message icon
-        """todo"""
+        # set toggleToolBar action
+        '''todo'''
 
         # set extracting action
         """todo"""
@@ -43,6 +43,12 @@ class MyApp(QMainWindow):
         self.toolbar = self.addToolBar('Exit')
         self.toolbar.addAction(exitAction)
         self.statusBar()
+
+        # set change language icon
+        """todo"""
+
+        # set open help message icon
+        """todo"""
 
         # set menubar
         menubar = self.menuBar()

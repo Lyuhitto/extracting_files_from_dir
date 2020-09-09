@@ -23,16 +23,11 @@ class MyApp(QMainWindow):
         exitAction.setStatusTip('Exit application')
         exitAction.triggered.connect(qApp.quit)
 
-        # set extracting action
-        """todo"""
-
         # set change language action
         """todo"""
 
         # set open help message action
         """todo"""
-
-        self.statusBar()
 
         # set tool bar icon
         # set exit icon
@@ -44,6 +39,11 @@ class MyApp(QMainWindow):
 
         # set open help message icon
         """todo"""
+
+        # set extracting action
+        """todo"""
+
+        self.statusBar()
 
     # widget display in the middle of the screen
     def center(self):

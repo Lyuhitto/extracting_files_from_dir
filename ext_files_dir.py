@@ -31,22 +31,25 @@ class MyApp(QMainWindow):
         # set open help message action
         """todo"""
 
-        # set toggleStatBar action
+        # set viewStatAction action
         viewStatAction = QAction('View statusbar', self, checkable=True)
         viewStatAction.setStatusTip('View statusbar')
         viewStatAction.setChecked(True)
         viewStatAction.triggered.connect(self.toggleStat)
 
-        # set toggleToolBar action
-        '''todo'''
+        # set viewToolBAct action
+        viewToolBarAct = QAction('View toolbar', self, checkable=True)
+        viewToolBarAct.setStatusTip('View toolbar')
+        viewToolBarAct.setChecked(True)
+        viewToolBarAct.triggered.connect(self.toggleToolBar)
 
         # set extracting action
         """todo"""
 
         # set tool bar icon
         # set exit icon
-        self.toolbar = self.addToolBar('Exit')
-        self.toolbar.addAction(exitAction)
+        self.toolBar = self.addToolBar('Exit')
+        self.toolBar.addAction(exitAction)
 
         # set change language icon
         """todo"""
@@ -60,7 +63,7 @@ class MyApp(QMainWindow):
         fileMenu.addAction(exitAction)
         viewMenu = menubar.addMenu('&View')
         viewMenu.addAction(viewStatAction)
-        #viewMenu.addAction(toggleToolBar)
+        viewMenu.addAction(viewToolBarAct)
 
     # widget display in the middle of the screen
     def center(self):
@@ -74,6 +77,12 @@ class MyApp(QMainWindow):
             self.statusBar.show()
         else:
             self.statusBar.hide()
+
+    def toggleToolBar(self, state):
+        if state:
+            self.toolBar.setVisible(True)
+        else:
+            self.toolBar.setVisible(False)
 
 
 if __name__ == '__main__':

@@ -29,11 +29,6 @@ class MyApp(QMainWindow):
         # set open help message action
         """todo"""
 
-        # set tool bar icon
-        # set exit icon
-        self.toolbar = self.addToolBar('Exit')
-        self.toolbar.addAction(exitAction)
-
         # set change language icon
         """todo"""
 
@@ -43,7 +38,14 @@ class MyApp(QMainWindow):
         # set extracting action
         """todo"""
 
+        # set tool bar icon
+        # set exit icon
+        self.toolbar = self.addToolBar('Exit')
+        self.toolbar.addAction(exitAction)
         self.statusBar()
+
+        # set menubar
+        menubar = self.menuBar()
 
     # widget display in the middle of the screen
     def center(self):

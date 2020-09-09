@@ -20,10 +20,10 @@ class MyApp(QMainWindow):
 
         # set actions
         # set exit action
-        exitAction = QAction(QIcon('img/exit.png'), 'Exit', self)
-        exitAction.setShortcut('Ctrl+Q')
-        exitAction.setStatusTip('Exit application')
-        exitAction.triggered.connect(qApp.quit)
+        exitAct = QAction(QIcon('img/exit.png'), 'Exit', self)
+        exitAct.setShortcut('Ctrl+Q')
+        exitAct.setStatusTip('Exit application')
+        exitAct.triggered.connect(qApp.quit)
 
         # set change language action
         """todo"""
@@ -49,7 +49,7 @@ class MyApp(QMainWindow):
         # set tool bar icon
         # set exit icon
         self.toolBar = self.addToolBar('Exit')
-        self.toolBar.addAction(exitAction)
+        self.toolBar.addAction(exitAct)
 
         # set change language icon
         """todo"""
@@ -60,7 +60,7 @@ class MyApp(QMainWindow):
         # set menubar
         menubar = self.menuBar()
         fileMenu = menubar.addMenu('&File')
-        fileMenu.addAction(exitAction)
+        fileMenu.addAction(exitAct)
         viewMenu = menubar.addMenu('&View')
         viewMenu.addAction(viewStatAct)
         viewMenu.addAction(viewToolBarAct)

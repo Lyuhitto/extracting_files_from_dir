@@ -15,7 +15,6 @@ class MyApp(QMainWindow):
         self.setWindowIcon(QIcon('img/web.png'))
         self.resize(500, 350)
         self.center()
-        self.show()
 
         # set actions
         # set exit action
@@ -56,5 +55,6 @@ class MyApp(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyApp()
+    win = MyApp()
+    win.show()
     sys.exit(app.exec_())

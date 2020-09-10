@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow,\
-    QAction, qApp, QWidget
+        qApp, QWidget
 from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 
@@ -16,7 +16,7 @@ class MyApp(QMainWindow, form_class):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.setWindowTitle('Extracting Files from Dir')
+        self.setWindowTitle('Extracting Files from Directory')
         self.setWindowIcon(QIcon('img/window_icon.png'))
         self.resize(500, 700)
         self.statusBar = self.statusBar()

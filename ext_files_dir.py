@@ -1,4 +1,5 @@
 import sys
+import webbrowser
 from PyQt5.QtWidgets import QApplication, QMainWindow,\
         qApp, QWidget
 from PyQt5.QtGui import QIcon
@@ -76,6 +77,9 @@ class AboutWindow(QWidget, about_class):
         self.setupUi(self)
         self.show()
         self.aboutClose.clicked.connect(lambda: self.close())
+        self.goToGithub.clicked.connect(
+            lambda: webbrowser.open('https://github.com/Lyuhitto')
+            )
 
 
 if __name__ == '__main__':

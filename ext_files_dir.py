@@ -59,6 +59,7 @@ class HelpWindow(QWidget, help_class):
         super(HelpWindow, self).__init__(parent)
         self.setupUi(self)
         self.show()
+        self.helpClose.clicked.connect(lambda: self.close())
 
 
 class LicenseWindow(QWidget, license_class):
@@ -66,6 +67,7 @@ class LicenseWindow(QWidget, license_class):
         super(LicenseWindow, self).__init__(parent)
         self.setupUi(self)
         self.show()
+        self.licenseClose.clicked.connect(lambda: self.close())
 
 
 class AboutWindow(QWidget, about_class):
@@ -73,6 +75,7 @@ class AboutWindow(QWidget, about_class):
         super(AboutWindow, self).__init__(parent)
         self.setupUi(self)
         self.show()
+        self.aboutClose.clicked.connect(lambda: self.close())
 
 
 if __name__ == '__main__':

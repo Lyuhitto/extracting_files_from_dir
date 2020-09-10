@@ -85,16 +85,6 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QPushButton" name="resetButton">
-        <property name="statusTip">
-         <string>Reset Window</string>
-        </property>
-        <property name="text">
-         <string>Reset Window</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
     <item>
@@ -157,7 +147,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionHow_to_use"/>
-   <addaction name="actionReset_Window"/>
+   <addaction name="actionResetWin"/>
    <addaction name="actionExit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -249,6 +239,21 @@
    </property>
   </action>
   <action name="actionReset_Window">
+   <property name="icon">
+    <iconset resource="myres.qrc">
+     <normaloff>:/icon/img/reset_window.png</normaloff>:/icon/img/reset_window.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset Window</string>
+   </property>
+   <property name="statusTip">
+    <string>Reset Window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionResetWin">
    <property name="icon">
     <iconset resource="myres.qrc">
      <normaloff>:/icon/img/reset_window.png</normaloff>:/icon/img/reset_window.png</iconset>

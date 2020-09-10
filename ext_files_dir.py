@@ -7,7 +7,7 @@ from PyQt5 import uic
 
 form_class = uic.loadUiType('ext_files_dir.ui')[0]
 help_class = uic.loadUiType('help.ui')[0]
-# license_class = uic.loadUiType('license.ui')[0]
+license_class = uic.loadUiType('license.ui')[0]
 # about_class = uic.loadUiType('about.ui')[0]
 
 
@@ -26,6 +26,7 @@ class MyApp(QMainWindow, form_class):
         self.actionView_statusbar.triggered.connect(self.toggleStat)
         self.actionView_toolbar.triggered.connect(self.toggleToolBar)
         self.actionHow_to_use.triggered.connect(self.howToUse)
+        self.actionSee_the_license.triggered.connect(self.seeTheLicense)
 
     def toggleStat(self, state):
         if state:
@@ -46,10 +47,20 @@ class MyApp(QMainWindow, form_class):
         '''
         self.win = HelpWindow()
 
+    def seeTheLicense(self):
+        self.win = LicenseWindow()
+
 
 class HelpWindow(QWidget, help_class):
     def __init__(self, parent=None):
         super(HelpWindow, self).__init__(parent)
+        self.setupUi(self)
+        self.show()
+
+
+class LicenseWindow(QWidget, license_class):
+    def __init__(self, parent=None):
+        super(LicenseWindow, self).__init__(parent)
         self.setupUi(self)
         self.show()
 

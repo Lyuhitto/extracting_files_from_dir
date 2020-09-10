@@ -20,6 +20,14 @@ class MyApp(QMainWindow, form_class):
         self.statusBar.showMessage('Hello')
 
         self.actionExit.triggered.connect(qApp.quit)
+        self.actionView_statusbar.triggered.connect(self.toggleStat)
+#        self.actionView_toolbar.triggered.connect(qApp.quit)
+
+    def toggleStat(self, state):
+        if state:
+            self.statusBar.show()
+        else:
+            self.statusBar.hide()
 
 
 if __name__ == '__main__':

@@ -22,6 +22,7 @@ class MyApp(QMainWindow, form_class):
         self.setWindowIcon(QIcon('img/window_icon.png'))
         self.statusBar = self.statusBar()
         self.statusBar.showMessage('Hello')
+        self.progress = self.extractProgress.value()
 
         # menubar and toolbar action
         self.actionExit.triggered.connect(qApp.quit)
@@ -88,9 +89,14 @@ class MyApp(QMainWindow, form_class):
         self.lineEditSaveTo.setText(dirName)
 
     def extractFolder(self):
+        self.progress = 0
         dirPath = self.lineEditExtract.text()
         for f in self.listOfFile:
             shutil.move(dirPath + '/' + f, self.lineEditSaveTo.text())
+            self.progress += round(1/len(self.listOfFile)*100)
+            if self.progress > 100:
+                self.progress = 100
+            self.extractProgress.setValue(self.progress)
 
 
 class HelpWindow(QWidget, help_class):

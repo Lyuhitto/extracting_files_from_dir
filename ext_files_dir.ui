@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>481</width>
-    <height>637</height>
+    <width>500</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Extracting Files from Directory</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -101,7 +101,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>481</width>
+     <width>500</width>
      <height>26</height>
     </rect>
    </property>
@@ -110,6 +110,7 @@
      <string>File</string>
     </property>
     <addaction name="actionExit"/>
+    <addaction name="actionReset_Window"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
@@ -147,8 +148,8 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionHow_to_use"/>
-   <addaction name="actionResetWin"/>
    <addaction name="actionExit"/>
+   <addaction name="actionReset_Window"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionExit">
@@ -239,21 +240,6 @@
    </property>
   </action>
   <action name="actionReset_Window">
-   <property name="icon">
-    <iconset resource="myres.qrc">
-     <normaloff>:/icon/img/reset_window.png</normaloff>:/icon/img/reset_window.png</iconset>
-   </property>
-   <property name="text">
-    <string>Reset Window</string>
-   </property>
-   <property name="statusTip">
-    <string>Reset Window</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+R</string>
-   </property>
-  </action>
-  <action name="actionResetWin">
    <property name="icon">
     <iconset resource="myres.qrc">
      <normaloff>:/icon/img/reset_window.png</normaloff>:/icon/img/reset_window.png</iconset>

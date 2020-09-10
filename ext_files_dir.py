@@ -1,11 +1,14 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow,\
-    QAction, qApp, QDesktopWidget
+    QAction, qApp, QWidget
 from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 
 
 form_class = uic.loadUiType('ext_files_dir.ui')[0]
+help_class = uic.loadUiType('help.ui')[0]
+# license_class = uic.loadUiType('license.ui')[0]
+# about_class = uic.loadUiType('about.ui')[0]
 
 
 class MyApp(QMainWindow, form_class):
@@ -22,6 +25,7 @@ class MyApp(QMainWindow, form_class):
         self.actionExit.triggered.connect(qApp.quit)
         self.actionView_statusbar.triggered.connect(self.toggleStat)
         self.actionView_toolbar.triggered.connect(self.toggleToolBar)
+        self.actionHow_to_use.triggered.connect(self.howToUse)
 
     def toggleStat(self, state):
         if state:
@@ -34,6 +38,20 @@ class MyApp(QMainWindow, form_class):
             self.toolBar.setVisible(True)
         else:
             self.toolBar.setVisible(False)
+
+    def howToUse(self):
+        '''
+        if win = HelpWindow() -> it goes out of scope!
+        -> garbage collector removes this
+        '''
+        self.win = HelpWindow()
+
+
+class HelpWindow(QWidget, help_class):
+    def __init__(self, parent=None):
+        super(HelpWindow, self).__init__(parent)
+        self.setupUi(self)
+        self.show()
 
 
 if __name__ == '__main__':

@@ -39,7 +39,8 @@ class MyApp(QMainWindow, form_class):
         listFiles
         """
         self.browseExtract.clicked.connect(self.extractClicked)
-
+        self.browseSaveTo.clicked.connect(self.saveClicked)
+        self.extractButton.clicked.connect(self.extractFolder)
         # save action
         """
         browseSaveTo
@@ -76,6 +77,14 @@ class MyApp(QMainWindow, form_class):
         fileList = '\n'.join(os.listdir(dirName))
         self.lineEditExtract.setText(dirName)
         self.listFiles.setText(fileList)
+
+    def saveClicked(self):
+        dirName = QFileDialog.getExistingDirectory(self)
+        self.saveToDir = dirName
+        self.lineEditSaveTo.setText(dirName)
+
+    def extractFolder(self):
+        pass
 
 
 class HelpWindow(QWidget, help_class):

@@ -21,13 +21,28 @@ class MyApp(QMainWindow, form_class):
         self.statusBar = self.statusBar()
         self.statusBar.showMessage('Hello')
 
-        # menubar action
+        # menubar and toolbar action
         self.actionExit.triggered.connect(qApp.quit)
         self.actionView_statusbar.triggered.connect(self.toggleStat)
         self.actionView_toolbar.triggered.connect(self.toggleToolBar)
         self.actionHow_to_use.triggered.connect(self.howToUse)
         self.actionSee_the_license.triggered.connect(self.seeTheLicense)
         self.actionAbout_Creator.triggered.connect(self.aboutCreator)
+
+        # extract action
+        """
+        lineEditExtract
+        browseExtract
+        extractButton
+        extractProgress
+        listFiles
+        """
+
+        # save action
+        """
+        browseSaveTo
+        lineEditSaveTo
+        """
 
     def toggleStat(self, state):
         if state:

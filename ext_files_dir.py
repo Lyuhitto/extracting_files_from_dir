@@ -19,6 +19,8 @@ class MyApp(QMainWindow, form_class):
         self.statusBar = self.statusBar()
         self.statusBar.showMessage('Hello')
 
+        self.actionExit.triggered.connect(qApp.quit)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

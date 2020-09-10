@@ -222,6 +222,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="myres.qrc">
      <normaloff>:/icon/img/statusbar.png</normaloff>:/icon/img/statusbar.png</iconset>
@@ -235,7 +238,7 @@
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="icon">
     <iconset resource="myres.qrc">

@@ -1,7 +1,8 @@
 import sys
+import os
 import webbrowser
 from PyQt5.QtWidgets import QApplication, QMainWindow,\
-        qApp, QWidget
+        qApp, QWidget, QFileDialog
 from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 
@@ -37,6 +38,7 @@ class MyApp(QMainWindow, form_class):
         extractProgress
         listFiles
         """
+        self.browseExtract.clicked.connect(self.extractClicked)
 
         # save action
         """
@@ -68,6 +70,12 @@ class MyApp(QMainWindow, form_class):
 
     def aboutCreator(self):
         self.win = AboutWindow()
+
+    def extractClicked(self):
+        dirName = QFileDialog.getExistingDirectory(self)
+        fileList = '\n'.join(os.listdir(dirName))
+        self.lineEditExtract.setText(dirName)
+        self.listFiles.setText(fileList)
 
 
 class HelpWindow(QWidget, help_class):

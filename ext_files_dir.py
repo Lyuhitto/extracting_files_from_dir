@@ -1,5 +1,6 @@
 import sys
 import os
+import shutil
 import webbrowser
 from PyQt5.QtWidgets import QApplication, QMainWindow,\
         qApp, QWidget, QFileDialog
@@ -40,6 +41,7 @@ class MyApp(QMainWindow, form_class):
         """
         self.browseExtract.clicked.connect(self.extractClicked)
         self.browseSaveTo.clicked.connect(self.saveClicked)
+        self.loadFileList.clicked.connect(self.loadList)
         self.extractButton.clicked.connect(self.extractFolder)
         # save action
         """
@@ -74,17 +76,21 @@ class MyApp(QMainWindow, form_class):
 
     def extractClicked(self):
         dirName = QFileDialog.getExistingDirectory(self)
-        fileList = '\n'.join(os.listdir(dirName))
         self.lineEditExtract.setText(dirName)
-        self.listFiles.setText(fileList)
+
+    def loadList(self):
+        dirName = self.lineEditExtract.text()
+        self.listOfFile = os.listdir(dirName)
+        self.listFiles.setText('\n'.join(self.listOfFile))
 
     def saveClicked(self):
         dirName = QFileDialog.getExistingDirectory(self)
-        self.saveToDir = dirName
         self.lineEditSaveTo.setText(dirName)
 
     def extractFolder(self):
-        pass
+        dirPath = self.lineEditExtract.text()
+        for f in self.listOfFile:
+            shutil.move(dirPath + '/' + f, self.lineEditSaveTo.text())
 
 
 class HelpWindow(QWidget, help_class):

@@ -40,6 +40,13 @@
      </layout>
     </item>
     <item>
+     <widget class="QPushButton" name="loadFileList">
+      <property name="text">
+       <string>Load file list</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QTextBrowser" name="listFiles"/>
     </item>
     <item>

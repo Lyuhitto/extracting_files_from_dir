@@ -13,6 +13,11 @@ class MyApp(QMainWindow, form_class):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.setWindowTitle('Extracting Files from Dir')
+        self.setWindowIcon(QIcon('img/window_icon.png'))
+        self.resize(500, 700)
+        self.statusBar = self.statusBar()
+        self.statusBar.showMessage('Hello')
 
 
 if __name__ == '__main__':

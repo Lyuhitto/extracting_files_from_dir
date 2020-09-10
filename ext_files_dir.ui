@@ -20,7 +20,7 @@
       <item>
        <widget class="QLabel" name="labelExtract">
         <property name="text">
-         <string>Extract to: </string>
+         <string>Extract: </string>
         </property>
        </widget>
       </item>
@@ -74,18 +74,14 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="extAndResetlayout">
-      <item>
-       <widget class="QPushButton" name="extractButton">
-        <property name="statusTip">
-         <string>Start Extract</string>
-        </property>
-        <property name="text">
-         <string>Extract</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QPushButton" name="extractButton">
+      <property name="statusTip">
+       <string>Start Extract</string>
+      </property>
+      <property name="text">
+       <string>Extract</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QProgressBar" name="extractProgress">

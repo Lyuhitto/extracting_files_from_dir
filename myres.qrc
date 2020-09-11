@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icon">
+    <file>img/error.png</file>
     <file>img/about_creator.png</file>
     <file>img/exit.png</file>
     <file>img/help.png</file>

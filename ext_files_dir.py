@@ -3,7 +3,7 @@ import os
 import shutil
 import webbrowser
 from PyQt5.QtWidgets import QApplication, QMainWindow,\
-        qApp, QWidget, QFileDialog
+        qApp, QWidget, QFileDialog, QDialog
 from PyQt5.QtGui import QIcon
 from PyQt5 import uic
 
@@ -12,6 +12,7 @@ form_class = uic.loadUiType('ext_files_dir.ui')[0]
 help_class = uic.loadUiType('help.ui')[0]
 license_class = uic.loadUiType('license.ui')[0]
 about_class = uic.loadUiType('about.ui')[0]
+error_class = uic.loadUiType('error_dialog.ui')[0]
 
 
 class MyApp(QMainWindow, form_class):
@@ -84,12 +85,18 @@ class MyApp(QMainWindow, form_class):
     def extractFolder(self):
         self.resetProgress()
         dirPath = self.lineEditExtract.text()
-        for f in self.listOfFile:
-            shutil.move(dirPath + '/' + f, self.lineEditSaveTo.text())
-            self.progress += round(1/len(self.listOfFile)*100)
-            if self.progress > 100:
-                self.progress = 100
-            self.extractProgress.setValue(self.progress)
+        try:
+            for f in self.listOfFile:
+                shutil.move(dirPath + '/' + f, self.lineEditSaveTo.text())
+                self.progress += round(1/len(self.listOfFile)*100)
+                if self.progress > 100:
+                    self.progress = 100
+                self.extractProgress.setValue(self.progress)
+        except shutil.Error as msg:
+            print(f'Error!: {msg}')
+            errorDialog = ErrorWindow()
+            errorDialog.modifyMsg(str(msg))
+            errorDialog.exec_()
 
     def resetWindow(self):
         self.resetProgress()
@@ -126,6 +133,16 @@ class AboutWindow(QWidget, about_class):
         self.goToGithub.clicked.connect(
             lambda: webbrowser.open('https://github.com/Lyuhitto')
             )
+
+
+class ErrorWindow(QDialog, error_class):
+    def __init__(self, parent=None):
+        super(ErrorWindow, self).__init__(parent)
+        self.setupUi(self)
+        self.errorClose.clicked.connect(lambda: self.close())
+
+    def modifyMsg(self, msg):
+        self.errorMessage.setText(msg)
 
 
 if __name__ == '__main__':

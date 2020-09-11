@@ -66,20 +66,23 @@ class MyApp(QMainWindow, form_class):
         self.win = AboutWindow()
 
     def extractClicked(self):
+        self.resetProgress()
         dirName = QFileDialog.getExistingDirectory(self)
         self.lineEditExtract.setText(dirName)
 
     def loadList(self):
+        self.resetProgress()
         dirName = self.lineEditExtract.text()
         self.listOfFile = os.listdir(dirName)
         self.listFiles.setText('\n'.join(self.listOfFile))
 
     def saveClicked(self):
+        self.resetProgress()
         dirName = QFileDialog.getExistingDirectory(self)
         self.lineEditSaveTo.setText(dirName)
 
     def extractFolder(self):
-        self.progress = 0
+        self.resetProgress()
         dirPath = self.lineEditExtract.text()
         for f in self.listOfFile:
             shutil.move(dirPath + '/' + f, self.lineEditSaveTo.text())
@@ -89,9 +92,12 @@ class MyApp(QMainWindow, form_class):
             self.extractProgress.setValue(self.progress)
 
     def resetWindow(self):
+        self.resetProgress()
         self.lineEditExtract.clear()
         self.listFiles.clear()
         self.lineEditSaveTo.clear()
+
+    def resetProgress(self):
         self.extractProgress.setValue(0)
 
 

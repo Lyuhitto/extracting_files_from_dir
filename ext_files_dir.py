@@ -22,6 +22,7 @@ class MyApp(QMainWindow, form_class):
         self.setWindowIcon(QIcon('img/window_icon.png'))
         self.statusBar = self.statusBar()
         self.statusBar.showMessage('Hello')
+        # variable of progress bar
         self.progress = self.extractProgress.value()
 
         # menubar and toolbar action
@@ -31,24 +32,13 @@ class MyApp(QMainWindow, form_class):
         self.actionHow_to_use.triggered.connect(self.howToUse)
         self.actionSee_the_license.triggered.connect(self.seeTheLicense)
         self.actionAbout_Creator.triggered.connect(self.aboutCreator)
+        self.actionReset_Window.triggered.connect(self.resetWindow)
 
-        # extract action
-        """
-        lineEditExtract
-        browseExtract
-        extractButton
-        extractProgress
-        listFiles
-        """
+        # buttons action
         self.browseExtract.clicked.connect(self.extractClicked)
         self.browseSaveTo.clicked.connect(self.saveClicked)
         self.loadFileList.clicked.connect(self.loadList)
         self.extractButton.clicked.connect(self.extractFolder)
-        # save action
-        """
-        browseSaveTo
-        lineEditSaveTo
-        """
 
     def toggleStat(self, state):
         if state:
@@ -97,6 +87,12 @@ class MyApp(QMainWindow, form_class):
             if self.progress > 100:
                 self.progress = 100
             self.extractProgress.setValue(self.progress)
+
+    def resetWindow(self):
+        self.lineEditExtract.clear()
+        self.listFiles.clear()
+        self.lineEditSaveTo.clear()
+        self.extractProgress.setValue(0)
 
 
 class HelpWindow(QWidget, help_class):

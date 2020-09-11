@@ -1,0 +1,17 @@
+name-template: 'v$NEXT_MINOR_VERSION'
+tag-template: 'v$NEXT_MINOR_VERSION'categories:
+  - title: '🥳 First Launch'
+    label: 'firstLaunch'
+  - title: '🚀 Features'
+    label: 'enhancement'
+  - title: '🐛 Bug Fixes'
+    label: - 'bug'
+  - title: '🔥 Hot Fixes'
+    label: 'hotfix'
+  - title: '📚 Documentation'
+    label: 'documentation'
+  - title: '🔳 ETC'
+    label: 'etc'
+change-template: '- $TITLE #$NUMBER @$AUTHOR '
+template: |
+  ## Uncategorized  $CHANGES

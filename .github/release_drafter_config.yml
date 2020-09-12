@@ -5,10 +5,7 @@ tag-template: 'v$NEXT_MINOR_VERSION'categories:
   - title: '🚀 Features'
     label: 'enhancement'
   - title: '🐛 Bug Fixes'
-    label:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
+    label: - 'bug'
   - title: '🔥 Hot Fixes'
     label: 'hotfix'
   - title: '📚 Documentation'
@@ -17,4 +14,4 @@ tag-template: 'v$NEXT_MINOR_VERSION'categories:
     label: 'etc'
 change-template: '- $TITLE #$NUMBER @$AUTHOR '
 template: |
-  ## What's Changed $CHANGES ## Uncategorized
+  ## Uncategorized  $CHANGES

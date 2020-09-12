@@ -14,4 +14,4 @@ tag-template: 'v$NEXT_MINOR_VERSION'categories:
     label: 'etc'
 change-template: '- $TITLE #$NUMBER @$AUTHOR '
 template: |
-  ## Uncategorized  $CHANGES
+  ## What's Changed $CHANGES ## Uncategorized

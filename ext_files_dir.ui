@@ -42,7 +42,7 @@
     <item>
      <widget class="QPushButton" name="loadFileList">
       <property name="text">
-       <string>Load file list</string>
+       <string>Load list</string>
       </property>
      </widget>
     </item>

@@ -5,7 +5,7 @@ tag-template: 'v$NEXT_MINOR_VERSION'categories:
   - title: '🚀 Features'
     label: 'enhancement'
   - title: '🐛 Bug Fixes'
-    label: - 'bug'
+    label: 'bug'
   - title: '🔥 Hot Fixes'
     label: 'hotfix'
   - title: '📚 Documentation'

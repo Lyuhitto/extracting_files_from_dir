@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>img/error.png</file>
+    <file>img/about_creator.png</file>
+    <file>img/exit.png</file>
+    <file>img/help.png</file>
+    <file>img/license.png</file>
+    <file>img/reset_window.png</file>
+    <file>img/statusbar.png</file>
+    <file>img/toolbar.png</file>
+    <file>img/window_icon.png</file>
+  </qresource>
+</RCC>

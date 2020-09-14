@@ -1,4 +1,11 @@
 # extracting_files_from_dir
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?color=blue)](https://opensource.org/licenses/Apache-2.0)
+![Release drafter](https://img.shields.io/github/workflow/status/lyuhitto/extracting_files_from_dir/Release%20Drafter?label=Release%20Drafter)
+![Docker action](https://img.shields.io/github/workflow/status/lyuhitto/extracting_files_from_dir/publish%20docker%20image%20to%20github%20pkg?label=Docker%20to%20Package)
+![Python package](https://img.shields.io/github/workflow/status/lyuhitto/extracting_files_from_dir/Upload%20Python%20Package?label=Python%20Package)
+![Size](https://img.shields.io/github/languages/code-size/lyuhitto/extracting_files_from_dir?color=blueviolet)
+
+
 Extract Everything!
 
 ----
